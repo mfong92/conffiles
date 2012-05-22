@@ -1,0 +1,70 @@
+# Tar
+alias targz="tar -zcvf" # archive-name.tar.gz directory-name
+
+# Unix
+alias la='ls -a'
+alias sl='ls'
+alias ll='ls -l'
+alias lal='ls -al'
+alias lla='ls -al'
+
+# Misc
+alias ragequit='exit'
+alias rq='ragequit'
+alias ragecommit='svn ci'
+alias rc='ragecommit'
+alias nyan='sudo'
+alias :q='exit'
+alias :Q='exit'
+
+# Because I love GNU tools
+if [ -e "`which ggrep 2> /dev/null`" ]; then
+    alias grep='ggrep --color'
+else
+    alias grep='grep --color'
+fi
+
+if [ -e "`which gawk 2> /dev/null`" ]; then
+    alias awk='gawk'
+fi
+if [ -e "`which gsed 2> /dev/null`" ]; then
+    alias sed='gsed'
+fi
+
+# fearless specific aliases for ITSM
+if [[ ${HOST} = fearless* ]] ; then
+    ITSMSECRET=/usr/local/rescomp/etc/itsm.secret
+    alias dsmadmc='dsmadmc -id=admin -pass="$(< $ITSMSECRET)" -dataonly=yes'
+    alias d=dsmadmc
+    alias q=dsmadmc\ q
+    alias qtab=dsmadmc\ -tab\ -out\ q
+fi
+
+# Alias breaks if SSH_AUTH_SOCK is not set
+if [ -n ${SSH_AUTH_SOCK} ]; then
+   alias ssh-agent="ssh-agent -a ${SSH_AUTH_SOCK}"
+fi
+
+# Some program aliases
+alias mutt='mutt -y'
+alias ssh-add='ssh-add -t 72000'
+alias diff='diff -u'
+alias gnome-terminal='gnome-terminal --hide-menubar'
+alias urxvt='urxvt -fg white -bg black +sb +vb'
+
+# Functions
+
+# Shell script to start Vim with less.vim.
+# Read stdin if no arguments were given.
+
+function vimless {
+    if [ $# = 0 ]; then
+      vim --cmd 'let no_plugin_maps = 1' -c 'runtime! macros/less.vim' -
+    else
+      vim --cmd 'let no_plugin_maps = 1' -c 'runtime! macros/less.vim' "$@"
+    fi
+}
+
+alias less='vimless'
+
+# vim:ft=zsh
