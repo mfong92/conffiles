@@ -14,7 +14,13 @@ do
         fi
         mv ~/.$i ~/dotfiles_old
     fi
-    ln -s $DIR/$i ~/.$i
+    if [ -d ~/.$i ] ;then
+        if [ -d ~/dotfiles_old/.$i ] ;then
+            rm ~/dotfiles_old/.$i
+        fi
+        mv ~/.$i ~/dotfiles_old
+    fi
+    ln -sv $DIR/$i ~/.$i
 done
 
 
