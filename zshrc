@@ -15,7 +15,7 @@ function collapse_pwd {
 
 # Prompt
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}
-  '
+  %{$fg_bold[red]%}➜%{$reset_color%}  '
 
 # Functions
 [ -f ${HOME}/.functions ] && . ${HOME}/.functions
