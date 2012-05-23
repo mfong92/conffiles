@@ -1,9 +1,8 @@
 #!/bin/bash
 
-DIR=/home/danwang/.dotfiles/
+DIR=~/.dotfiles
 
 mkdir -p ~/dotfiles_old
-find ~/dotfiles_old -type f -delete
 
 cd $DIR
 for i in *
@@ -20,9 +19,8 @@ do
         fi
         mv ~/.$i ~/dotfiles_old
     fi
-    ln -s $DIR/$i ~/.$i
+    ln -sf $DIR/$i ~/.$i
 done
 
 
 rm ~/.setup.sh
-rm ~/.README.md
