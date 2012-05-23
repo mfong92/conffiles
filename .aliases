@@ -7,6 +7,7 @@ alias sl='ls'
 alias ll='ls -l'
 alias lal='ls -al'
 alias lla='ls -al'
+#alias cd='cd $1 && ls'
 
 # Misc
 alias ragequit='exit'
@@ -54,9 +55,6 @@ alias urxvt='urxvt -fg white -bg black +sb +vb'
 
 # Functions
 
-# Shell script to start Vim with less.vim.
-# Read stdin if no arguments were given.
-
 function vimless {
     if [ $# = 0 ]; then
       vim --cmd 'let no_plugin_maps = 1' -c 'runtime! macros/less.vim' -
@@ -68,3 +66,4 @@ function vimless {
 alias less='vimless'
 
 # vim:ft=zsh
+
