@@ -7,7 +7,6 @@ alias sl='ls'
 alias ll='ls -l'
 alias lal='ls -al'
 alias lla='ls -al'
-#alias cd='cd $1 && ls'
 
 # Misc
 alias ragequit='exit'

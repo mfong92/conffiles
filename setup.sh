@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=/Users/danwang/.dotfiles/
+DIR=/home/danwang/.dotfiles/
 
 mkdir -p ~/dotfiles_old
 find ~/dotfiles_old -type f -delete
@@ -20,7 +20,7 @@ do
         fi
         mv ~/.$i ~/dotfiles_old
     fi
-    ln -sv $DIR/$i ~/.$i
+    ln -s $DIR/$i ~/.$i
 done
 
 

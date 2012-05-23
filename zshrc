@@ -1,6 +1,9 @@
 # Common settings
 [ -f ${HOME}/.commonrc ] && . ${HOME}/.commonrc
 
+# Facebook settings
+[ -f ${HOME}/.facebookrc ] && . ${HOME}/.facebookrc
+
 # Oh my ZSH!
 ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -15,10 +18,7 @@ PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} 
   '
 
 # Functions
-if [ -d ~/.zfunctions ] ;then
-    fpath=(~/.zfunctions $fpath)
-    autoload -U ${fpath[1]}/*~${fpath[1]}/*.zwc(:t) 2>/dev/null >&2
-fi
+[ -f ${HOME}/.functions ] && . ${HOME}/.functions
 
 # Automatically added completion options
 zstyle ':completion:*' insert-unambiguous true
