@@ -1,5 +1,9 @@
 # Automatically ls after a cd
 function cd()
 {
-  builtin cd "$*" && ls
+  if [ $# -eq 0 ]; then
+    builtin cd && ls
+  else
+    builtin cd "$*" && ls
+  fi
 }
