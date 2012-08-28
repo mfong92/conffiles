@@ -1,23 +1,23 @@
 #!/bin/bash
 
-DIR=~/.dotfiles
+DIR=`pwd`
+OLD=~/dotfiles_old
 
-mkdir -p ~/dotfiles_old
+mkdir -p $OLD
 
-cd $DIR
 for i in *
 do
-    if [ -f ~/.$i ] ;then
-        if [ -f ~/dotfiles_old/.$i ] ;then
-            rm ~/dotfiles_old/.$i
+    if [[ -e ~/.$i ]] ;then
+        if [[ -f $OLD/.$i ]] ;then
+            rm $OLD/.$i
         fi
-        mv ~/.$i ~/dotfiles_old
+        mv ~/.$i $OLD
     fi
-    if [ -d ~/.$i ] ;then
-        if [ -d ~/dotfiles_old/.$i ] ;then
-            rm ~/dotfiles_old/.$i
+    if [[ -d ~/.$i ]] ;then
+        if [[ -d $OLD/.$i ]] ;then
+            rm -rf $OLD/.$i
         fi
-        mv ~/.$i ~/dotfiles_old
+        mv ~/.$i $OLD
     fi
     ln -sf $DIR/$i ~/.$i
 done
