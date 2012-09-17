@@ -16,8 +16,8 @@ set incsearch    " Incremental searches
 set ignorecase   " Ignore case when searching
 
 " Tabbing/indentation
-set tabstop=4     " Tab characters are displayed as 2 spaces
-set shiftwidth=4  " Shift (<</>>) indents by 2 spaces
+set tabstop=2     " Tab characters are displayed as 2 spaces
+set shiftwidth=2  " Shift (<</>>) indents by 2 spaces
 set expandtab     " Pressing tab inserts spaces
 set smarttab      " Smart tabbing
 set shiftround    " Round tabbing to shiftwidth

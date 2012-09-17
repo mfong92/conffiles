@@ -10,9 +10,7 @@ alias lla='ls -al'
 
 # Misc
 alias ragequit='exit'
-alias rq='ragequit'
 alias ragecommit='svn ci'
-alias rc='ragecommit'
 alias nyan='sudo'
 alias :q='exit'
 alias :Q='exit'
@@ -31,29 +29,16 @@ if [ -e "`which gsed 2> /dev/null`" ]; then
     alias sed='gsed'
 fi
 
-# fearless specific aliases for ITSM
-if [[ ${HOST} = fearless* ]] ; then
-    ITSMSECRET=/usr/local/rescomp/etc/itsm.secret
-    alias dsmadmc='dsmadmc -id=admin -pass="$(< $ITSMSECRET)" -dataonly=yes'
-    alias d=dsmadmc
-    alias q=dsmadmc\ q
-    alias qtab=dsmadmc\ -tab\ -out\ q
-fi
-
 # Alias breaks if SSH_AUTH_SOCK is not set
 if [ -n ${SSH_AUTH_SOCK} ]; then
    alias ssh-agent="ssh-agent -a ${SSH_AUTH_SOCK}"
 fi
 
 # Some program aliases
-alias mutt='mutt -y'
 alias ssh-add='ssh-add -t 72000'
 alias diff='diff -u'
-alias gnome-terminal='gnome-terminal --hide-menubar'
-alias urxvt='urxvt -fg white -bg black +sb +vb'
 
 # Functions
-
 function vimless {
     if [ $# = 0 ]; then
       vim --cmd 'let no_plugin_maps = 1' -c 'runtime! macros/less.vim' -
@@ -63,6 +48,3 @@ function vimless {
 }
 
 alias less='vimless'
-
-# vim:ft=zsh
-

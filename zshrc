@@ -1,9 +1,6 @@
 # Common settings
 [ -f ${HOME}/.commonrc ] && . ${HOME}/.commonrc
 
-# Facebook settings
-[ -f ${HOME}/.facebookrc ] && . ${HOME}/.facebookrc
-
 # Oh my ZSH!
 ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh

@@ -1,6 +1,3 @@
-# Source Facebook settings first
-[ -f ~/.facebookrc ] && . ${HOME}/.facebookrc
-
 # Source aliases
 [ -f ~/.aliases ] && . ${HOME}/.aliases
 
