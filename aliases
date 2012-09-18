@@ -29,11 +29,6 @@ if [ -e "`which gsed 2> /dev/null`" ]; then
     alias sed='gsed'
 fi
 
-# Alias breaks if SSH_AUTH_SOCK is not set
-if [ -n ${SSH_AUTH_SOCK} ]; then
-   alias ssh-agent="ssh-agent -a ${SSH_AUTH_SOCK}"
-fi
-
 # Some program aliases
 alias ssh-add='ssh-add -t 72000'
 alias diff='diff -u'
