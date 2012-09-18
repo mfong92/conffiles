@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# IMPORATNT! Run this script from the conffiles directory.
+
 DIR=`pwd`
 OLD=~/dotfiles_old
 
@@ -20,6 +22,7 @@ do
         mv ~/.$i $OLD
     fi
     ln -sf $DIR/$i ~/.$i
+    echo "Creating ~/.$i"
 done
 
 
