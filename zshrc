@@ -2,6 +2,7 @@
 [ -f ${HOME}/.commonrc ] && . ${HOME}/.commonrc
 
 # Oh my ZSH!
+export DISABLE_AUTO_UPDATE=true
 ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 plugins=(git)
