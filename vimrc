@@ -2,6 +2,7 @@
 " first, because it changes other options as a side effect.
 set nocompatible
 
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 colorscheme bombat
 
 filetype plugin on
@@ -35,7 +36,7 @@ command Q q
 
 " Error handling
 set cc=77               " Color columns > 77 letters
-match ErrorMsg '\s\+$'  " Match trailing whitespace as an error
+match ExtraWhitespace /\s\+$/  " Match trailing whitespace as an error
 
 " General
 set t_Co=256                   " Use 256 colors
@@ -69,3 +70,10 @@ map <C-t> <ESC>:tabnew
 " Map Spellcheck to turn on spellcheck
 command Spellcheck setlocal spell spelllang=en_us
 
+set modeline
+
+autocmd FileType c,cpp,python,ruby,java autocmd BufWritePre :call <SID>StripWhite()
+fun! <SID>StripWhite()
+  %s/[ \t]\+$//ge
+  %s!^\( \+\)\t!\=StrRepeat("\t", 1 + strlen(submatch(1)) / 8)!ge
+endfun
