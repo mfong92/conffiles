@@ -1,6 +1,9 @@
 # Source aliases
 [ -f ~/.aliases ] && . ${HOME}/.aliases
 
+# Source aliases
+[ -f ~/.rvm/scripts/rvm ] && . ${HOME}/.rvm/scripts/rvm
+
 # Hacks for Solaris and urxvt
 if [[ "$TERM" == 'screen' || "$TERM" == 'vt100' && 'SunOS' == $(uname) ]]
 then

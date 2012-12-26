@@ -46,3 +46,5 @@ else
         eval `dircolors $HOME/.dir_colors`
 fi
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

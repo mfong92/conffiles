@@ -49,3 +49,5 @@ setopt autocd beep nomatch
 bindkey -v
 bindkey "^?" backward-delete-char
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

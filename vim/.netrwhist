@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/dan/src/pyscheme/pyscheme'
-let g:netrw_dirhist_2='/home/dan/src/pyscheme'
-let g:netrw_dirhist_3='/home/danwang/danwang/conf/.vim'
-let g:netrw_dirhist_4='/home/danwang/danwang/sasr5b/book-notes/siege-of-krishnapur'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/danwang/src/finna-bear/app/controllers'
+let g:netrw_dirhist_2='/home/danwang/src/picross-solver/app/controllers'
+let g:netrw_dirhist_3='/home/danwang/src/furry-llama/.git'
+let g:netrw_dirhist_4='/home/danwang/src/rapid-spin'
+let g:netrw_dirhist_5='/home/danwang/research/dblog/.git'
