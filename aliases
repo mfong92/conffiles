@@ -43,3 +43,9 @@ function vimless {
 }
 
 alias less='vimless'
+
+# Git
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff --color'
+alias gs='git status'
